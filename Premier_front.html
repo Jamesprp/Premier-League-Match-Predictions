@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League Predictor</title>
+    <link rel="stylesheet" href="Premier_style.css">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+
+<body>
+    <h1>Premier League Match Predictor</h1>
+
+    <div id="team-selection">
+        <div class="team">
+            <form method="POST" action="{{ url_for('predict') }}">
+            <select id="team1">
+                <!-- options here -->
+                <option value="AFCBournemouth">AFC Bournemouth</option>
+                <option value="Arsenal">Arsenal</option>
+                <option value="AstonVilla">Aston Villa</option>
+                <option value="BirminghamCity">Birmingham City</option>
+                <option value="BlackburnRovers">Blackburn Rovers</option>
+                <option value="Blackpool">Blackpool</option>
+                <option value="BoltonWanderers">Bolton Wanderers</option>
+                <option value="BrightonAndHoveAlbion">Brighton and Hove Albion</option>
+                <option value="Burnley">Burnley</option>
+                <option value="CardiffCity">Cardiff City</option>
+                <option value="CharltonAthletic">Charlton Athletic</option>
+                <option value="Chelsea">Chelsea</option>
+                <option value="CrystalPalace">Crystal Palace</option>
+                <option value="DerbyCounty">Derby County</option>
+                <option value="Everton">Everton</option>
+                <option value="Fulham">Fulham</option>
+                <option value="HuddersfieldTown">Huddersfield Town</option>
+                <option value="HullCity">Hull City</option>
+                <option value="LeicesterCity">Leicester City</option>
+                <option value="Liverpool">Liverpool</option>
+                <option value="ManchesterCity">Manchester City</option>
+                <option value="ManchesterUnited">Manchester United</option>
+                <option value="Middlesbrough">Middlesbrough</option>
+                <option value="NewcastleUnited">Newcastle United</option>
+                <option value="NorwichCity">Norwich City</option>
+                <option value="Portsmouth">Portsmouth</option>
+                <option value="QueensParkRangers">Queens Park Rangers</option>
+                <option value="Reading">Reading</option>
+                <option value="SheffieldUnited">Sheffield United</option>
+                <option value="Southampton">Southampton</option>
+                <option value="StokeCity">Stoke City</option>
+                <option value="Sunderland">Sunderland</option>
+                <option value="SwanseaCity">Swansea City</option>
+                <option value="TottenhamHotspur">Tottenham Hotspur</option>
+                <option value="Watford">Watford</option>
+                <option value="WestBromwichAlbion">West Bromwich Albion</option>
+                <option value="WestHamUnited">West Ham United</option>
+                <option value="WiganAthletic">Wigan Athletic</option>
+                <option value="WolverhamptonWanderers">Wolverhampton Wanderers</option>                
+            </select>
+            
+            <img id="team1Logo" src="" alt="Team 1 Logo" style="display: none;" />
+        </div>
+        <div class="team">
+            <select id="team2">
+                <!-- options here -->
+                <option value="AFCBournemouth">AFC Bournemouth</option>
+                <option value="Arsenal">Arsenal</option>
+                <option value="AstonVilla">Aston Villa</option>
+                <option value="BirminghamCity">Birmingham City</option>
+                <option value="BlackburnRovers">Blackburn Rovers</option>
+                <option value="Blackpool">Blackpool</option>
+                <option value="BoltonWanderers">Bolton Wanderers</option>
+                <option value="BrightonAndHoveAlbion">Brighton and Hove Albion</option>
+                <option value="Burnley">Burnley</option>
+                <option value="CardiffCity">Cardiff City</option>
+                <option value="CharltonAthletic">Charlton Athletic</option>
+                <option value="Chelsea">Chelsea</option>
+                <option value="CrystalPalace">Crystal Palace</option>
+                <option value="DerbyCounty">Derby County</option>
+                <option value="Everton">Everton</option>
+                <option value="Fulham">Fulham</option>
+                <option value="HuddersfieldTown">Huddersfield Town</option>
+                <option value="HullCity">Hull City</option>
+                <option value="LeicesterCity">Leicester City</option>
+                <option value="Liverpool">Liverpool</option>
+                <option value="ManchesterCity">Manchester City</option>
+                <option value="ManchesterUnited">Manchester United</option>
+                <option value="Middlesbrough">Middlesbrough</option>
+                <option value="NewcastleUnited">Newcastle United</option>
+                <option value="NorwichCity">Norwich City</option>
+                <option value="Portsmouth">Portsmouth</option>
+                <option value="QueensParkRangers">Queens Park Rangers</option>
+                <option value="Reading">Reading</option>
+                <option value="SheffieldUnited">Sheffield United</option>
+                <option value="Southampton">Southampton</option>
+                <option value="StokeCity">Stoke City</option>
+                <option value="Sunderland">Sunderland</option>
+                <option value="SwanseaCity">Swansea City</option>
+                <option value="TottenhamHotspur">Tottenham Hotspur</option>
+                <option value="Watford">Watford</option>
+                <option value="WestBromwichAlbion">West Bromwich Albion</option>
+                <option value="WestHamUnited">West Ham United</option>
+                <option value="WiganAthletic">Wigan Athletic</option>
+                <option value="WolverhamptonWanderers">Wolverhampton Wanderers</option>
+                
+            </select>
+            <img id="team2Logo" src="" alt="Team 2 Logo" style="display: none;" />
+            <img id="AFCBournemouth" src="/Premier_pic/AFC_Bournemouth.png" alt="AFC Bournemouth Logo" style="display: none;" />
+            <img id="Arsenal" src="/Premier_pic/Arsenal_FC.png" alt="Arsenal Logo" style="display: none;" />
+            <img id="AstonVilla" src="/Premier_pic/Aston_Villa_FC_logo.png" alt="Aston Villa Logo" style="display: none;" />
+            <img id="BirminghamCity" src="/Premier_pic/Birmingham_City_FC_logo.png" alt="Birmingham City Logo" style="display: none;" />
+            <img id="BlackburnRovers" src="/Premier_pic/Blackburn_Rovers.png" alt="Blackburn Rovers Logo" style="display: none;" />
+            <img id="Blackpool" src="/Premier_pic/Blackpool_FC_logo.png" alt="Blackpool Logo" style="display: none;" />
+            <img id="BoltonWanderers" src="/Premier_pic/Bolton_Wanderers_FC_logo.png" alt="Bolton Wanderers Logo" style="display: none;" />
+            <img id="BrightonHoveAlbion" src="/Premier_pic/Brighton_&_Hove_Albion_logo.png" alt="Brighton and Hove Albion Logo"
+                style="display: none;" />
+            <img id="Burnley" src="/Premier_pic/Burnley_FC_Logo.png" alt="Burnley Logo" style="display: none;" />
+            <img id="CardiffCity" src="/Premier_pic/Cardiff_City_crest.png" alt="Cardiff City Logo" style="display: none;" />
+            <img id="CharltonAthletic" src="/Premier_pic/CharltonBadge_30Jan2020.png" alt="Charlton Athletic Logo" style="display: none;" />
+            <img id="Chelsea" src="/Premier_pic/Chelsea_FC.png" alt="Chelsea Logo" style="display: none;" />
+            <img id="CrystalPalace" src="/Premier_pic/Crystal_Palace_FC_logo_(2022).png" alt="Crystal Palace Logo" style="display: none;" />
+            <img id="DerbyCounty" src="/Premier_pic/Derby_County_crest.png" alt="Derby County Logo" style="display: none;" />
+            <img id="Everton" src="/Premier_pic/Everton_FC_logo.png" alt="Everton Logo" style="display: none;" />
+            <img id="Fulham" src="/Premier_pic/Fulham_FC_(shield).png" alt="Fulham Logo" style="display: none;" />
+            <img id="HuddersfieldTown" src="/Premier_pic/Huddersfield_Town_A.F.C._logo.png" alt="Huddersfield Town Logo" style="display: none;" />
+            <img id="HullCity" src="/Premier_pic/Hull_City_A.F.C._logo.png" alt="Hull City Logo" style="display: none;" />
+            <img id="LeicesterCity" src="/Premier_pic/Leicester_City_crest.png" alt="Leicester City Logo" style="display: none;" />
+            <img id="Liverpool" src="/Premier_pic/Liverpool_FC.png" alt="Liverpool Logo" style="display: none;" />
+            <img id="ManchesterCity" src="/Premier_pic/Manchester_City_FC_badge.png" alt="Manchester City Logo" style="display: none;" />
+            <img id="ManchesterUnited" src="/Premier_pic/Manchester_United_FC_crest.png" alt="Manchester United Logo" style="display: none;" />
+            <img id="Middlesbrough" src="/Premier_pic/Middlesbrough_FC_crest.png" alt="Middlesbrough Logo" style="display: none;" />
+            <img id="NewcastleUnited" src="/Premier_pic/Newcastle_United_Logo.png" alt="Newcastle United Logo" style="display: none;" />
+            <img id="NorwichCity" src="/Premier_pic/Norwich_City_FC_logo.png" alt="Norwich City Logo" style="display: none;" />
+            <img id="Portsmouth" src="/Premier_pic/Portsmouth_FC_logo.png" alt="Portsmouth Logo" style="display: none;" />
+            <img id="QueensParkRangers" src="/Premier_pic/Queens_Park_Rangers_crest.png" alt="Queens Park Rangers Logo" style="display: none;" />
+            <img id="Reading" src="/Premier_pic/Reading_FC.png" alt="Reading Logo" style="display: none;" />
+            <img id="SheffieldUnited" src="/Premier_pic/Sheffield_United_FC_logo.png" alt="Sheffield United Logo" style="display: none;" />
+            <img id="Southampton" src="/Premier_pic/FC_Southampton.png" alt="Southampton Logo" style="display: none;" />
+            <img id="StokeCity" src="/Premier_pic/Stoke_City_FC.png" alt="Stoke City Logo" style="display: none;" />
+            <img id="Sunderland" src="/Premier_pic/Logo_Sunderland.png" alt="Sunderland Logo" style="display: none;" />
+            <img id="SwanseaCity" src="/Premier_pic/Swansea_City_AFC_logo.png" alt="Swansea City Logo" style="display: none;" />
+            <img id="TottenhamHotspur" src="/Premier_pic/Tottenham_Hotspur.png" alt="Tottenham Hotspur Logo" style="display: none;" />
+            <img id="Watford" src="/Premier_pic/Watford.png" alt="Watford Logo" style="display: none;" />
+            <img id="WestBromwichAlbion" src="/Premier_pic/West_Bromwich_Albion.png" alt="West Bromwich Albion Logo" style="display: none;" />
+            <img id="WestHamUnited" src="/Premier_pic/West_Ham_United_FC_logo.png" alt="West Ham United Logo" style="display: none;" />
+            <img id="WiganAthletic" src="/Premier_pic/Wigan_Athletic.png" alt="Wigan Athletic Logo" style="display: none;" />
+            <img id="WolverhamptonWanderers" src="/Premier_pic/Wolverhampton_Wanderers.png" alt="Wolverhampton Wanderers Logo" style="display: none;" />
+
+
+        </div>
+    </div>
+
+    <button id="predictButton">Predict Match Outcome</button>
+
+</form>
+
+
+    <div id="predictionResult">
+        <p>Predicted Outcome: <span id="outcome"></span></p>
+        <p>Probability: <span id="probability"></span></p>
+    </div>
+
+    <script src="Premier_script.js"></script>
+</body>
+
+</html>

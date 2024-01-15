@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#team-selection {
+    margin: 20px;
+}
+
+select {
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+#predictionResult {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
+
+.team {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+     /* Adjust as necessary */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    margin-top: 10px;
+}
